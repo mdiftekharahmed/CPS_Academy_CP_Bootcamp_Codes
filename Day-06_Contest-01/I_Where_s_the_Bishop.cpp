@@ -1,0 +1,66 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+#define fastio std::ios::sync_with_stdio(0);std::cin.tie(0);std::cout.tie(0);
+#define ll long long
+
+#define pb push_back
+#define eb emplace_back
+#define all(x) (x).begin(), (x).end()
+#define rall(x) (x).rbegin(), (x).rend()
+#define pii pair<int, int>
+#define vi vector<int>
+#define vll vector<ll>
+#define vpi vector<pii>
+#define endl '\n'
+#define rep(i, a, b) for(int i = (a); i < (b); ++i)
+#define repd(i, a, b, d) for(int i = (a); i < (b); i += d)
+#define rrep(i, a, b) for(int i = (a); i >= (b); --i)
+#define spc << ' ' <<
+
+#define YES cout << "YES\n"
+#define Yes cout << "Yes\n"
+#define NO cout << "NO\n"
+#define No cout << "No\n"
+
+int main(){
+    fastio
+
+    int _;
+    cin >> _;
+    while(_--){
+        vector<string> arr(8);
+        rep(i,0,8)cin>>arr[i];
+        
+        // rep(i,0,8){
+        //     cout<<arr[i]<<endl;
+        // }
+        int hashcnt=0;
+        vi ind;
+        int i=0;
+        while(hashcnt<2 && i<8){
+            ind.clear();
+            hashcnt=0;
+            rep(j,0,8){
+                if(arr[i][j]=='#'){
+                    hashcnt++;
+                    ind.pb(j);
+                }
+            }
+            i++;
+        }
+        int tg = (ind[0]+ind[1])/2;
+        rep(i,0,8){
+            if(arr[i][tg]=='#'){
+                cout<<i+1<<" "<<tg+1<<endl;
+                break;
+            }
+        }
+    
+    
+    }
+
+
+
+    return 0;
+}
